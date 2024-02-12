@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+            font-family: bradley hand, cursive;
+			background-color:#FFF5E4;
+            color: #FF9494;
+        }
+        .header {
+            font-size: 38px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        .yesButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: bradley hand, cursive;
+            margin-bottom: 20px;
+            background-color:#FF9494;
+            color: #ffffff;
+            border-radius: 12px;
+            border: hidden;
+        }
+        .noButton {
+            width: 50pt;
+	        height: 35pt;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: bradley hand, cursive;
+            margin-bottom: 20px;
+            background-color:#FF9494;
+            color: #ffffff;
+            border-radius: 12px;
+            position: absolute;
+	        align-items: center;
+	        display: flex;
+	        justify-content: center;
+	        right: 50%;
+	        bottom: 50%;
+	        border: hidden;
+	        z-index: -1;
+        }
+    </style>
+
+</head>
+<body>
+    <img src ='cat.gif' alt = 'cat asking question'>
+    <div class="header"><b>Will you be my valentine <br>Stephanie Porol Bulawan 01?</b></div>
+    <button class="yesButton" onclick="location.href='thankyou.html'">YES</button>
+    <button class="noButton" id="noButton" onmouseup="mouseup()">NO</button>
+    <br>
+
+    <script>
+        document.getElementById('noButton').addEventListener('click', function() {
+            var yesButton = document.querySelector('button[onclick*="thankyou.html"]');
+            var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentFontSize + 30) + 'px';
+        });
+        setInterval(function () {
+	        document.getElementById("noButton").style.right = Math.random() * 95 + "%";
+	        document.getElementById("noButton").style.top = Math.random() * 95 + "%";
+        }, 1000);
+    </script>
+</body>
+</html>
